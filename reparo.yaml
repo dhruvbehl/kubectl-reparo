@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: reparo
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/dhruvbehl/kubectl-reparo
+  shortDescription: "Smart conditional patching of Kubernetes resources"
+  description: |
+    Reparo allows conditional patching of Kubernetes resources.
+    Use powerful --set and --where flags to apply targeted changes.
+    Dry-run mode, YAML diffs, multi-resource patching, and CRD support included.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/dhruvbehl/kubectl-reparo/releases/download/v0.1.0/kubectl-reparo_darwin_amd64.tar.gz
+    sha256: aa0a322bb30ee26abc863112d1a69bbc487b89d391db36c2ab1baf2ff3caf13f
+    bin: kubectl-reparo
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/dhruvbehl/kubectl-reparo/releases/download/v0.1.0/kubectl-reparo_linux_amd64.tar.gz
+    sha256: b441c58453f62ebcbc2890492b89fbeab45a4d4877dbab8ce2788ecc90c3dbf5
+    bin: kubectl-reparo
+
